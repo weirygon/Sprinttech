@@ -41,6 +41,10 @@
 
 <body>
 
+    <div class="description">
+        <h1>@yield('paragrafo')</h1>
+    </div>
+
     <div class="container">
         @yield('conteudo')
     </div>

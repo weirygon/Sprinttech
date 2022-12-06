@@ -2,8 +2,9 @@
 
 @section('titulo', 'Sprinttech')
 
-@section('conteudo')
+@section('paragrafo', 'Pacientes')
 
+@section('conteudo')
 
 
 @endsection

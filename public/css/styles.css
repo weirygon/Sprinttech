@@ -1,3 +1,9 @@
+*{
+
+    font-family: 'Ubuntu', sans-serif;
+
+}
+
 header {
 
     width: auto;
@@ -46,6 +52,19 @@ header {
 
 }
 
+/*  div DESCRIPTION */
+
+.description{
+
+    display: block;
+    width: 80%;
+    height: 50px;
+    color:#00446B;
+    max-width: none;
+    margin: 25px 10% 0 10%;
+
+}
+
 /* div CONTAINER */
 
 
@@ -53,12 +72,385 @@ header {
 
     display: block;
     width: 80%;
-    height: 100%;
+    height: auto;
     max-width: none;
-    margin: 50px 10% 50px 10%;
+    margin: 25px 10% 50px 10%;
+    padding: 2px;
 
     border-radius: 20px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
     background-color: rgba(0, 0, 0, 0.1);
-    justify-content: center;
 }
+
+.cadastro-box{
+    background-color: white;
+    border-radius: 20px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/*Configuração dados paciente*/
+.box-paciente{
+    width: 90%;
+    height: auto;
+    margin: auto;
+}
+/*Configuração nome e imagem*/
+.line1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.name{
+    width: 60%;
+}
+.name input{
+    width: 100%;
+}
+/*Configuração para a imagem do paciente*/
+.picture-paciente{
+    width: 40%;
+    display: flex;
+    margin-top: 30px;
+}
+.picture_input{
+    display: none;
+}
+.picture-paciente{
+    width: 200px;
+    aspect-ratio: 5/3;
+    background-color: #d6d3d3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed;
+    color: rgb(108, 108, 108);
+    transition: color 3s ease-in-out, backgroud 3s ease-in-out;
+}
+.picture:hover{
+    color: #777;
+    background: #ccc;
+}
+/*Configuração idade e genero*/
+.line2{
+    display: flex;
+    flex-direction: row;
+    margin:10px 0px;
+}
+.esq-line2{
+    width: 50%;
+}
+.esq-line2 input{
+    width: 95%;
+}
+.dir-line2{
+    width: 50%;
+}
+.dir-line2 input{
+    width: 100%;
+}
+/*Configuração espaçamento email*/
+.line3{
+    margin:10px 0px;
+}
+.line3 input{
+    width: 100%;
+}
+/*Configuração nascimento e telefone*/
+.line4{
+    display: flex;
+    flex-direction: row;
+    margin:10px 0px;
+}
+.esq-line4{
+    width: 50%;
+}
+.esq-line4 input{
+    width: 95%;
+}
+.dir-line4{
+    width: 50%;
+}
+.dir-line4 input{
+    width: 100%;
+}
+/*Configuração sobre o tratamento*/
+.line5{
+    display: flex;
+    flex-direction: row;
+    margin:10px 0px;
+}
+.esq-line5{
+    width: 50%;
+}
+.esq-line5 input{
+    width: 95%;
+}
+.dir-line5{
+    width: 50%;
+}
+.dir-line5 input{
+    width: 100%;
+}
+/*Configuração global input paciente*/
+.paciente input{
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #00446B;
+    background-color: rgba(255, 255, 255, 0.8);
+    font-size: 12pt;
+    outline: none;
+    margin: auto;
+}
+.paciente input[type="submit"]{
+    width: 50%;
+    height: 20%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    background-color: #00446B;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    margin: 10% auto 10% auto;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+/*Configurando a barra de progresso*/
+.progress-bar{
+    width: 90%;
+    height: auto;
+    margin: auto;
+    background-color: white;
+}
+.progress-bar h1{
+    width: 90%;
+    height: auto;
+    margin: 0;
+    color:#00446B;
+    font-weight: 700;
+    font-size: 24px;
+
+}
+.head-progress-bar{
+    text-align: start;
+}
+.progress{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    background-color: white;
+}
+#date_progress{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+#date_progress label{
+    color:#00446B;
+}
+.step-wizard {
+    height: 80%;
+    width: 70%;
+    display: flex;
+}
+.step-wizard-list{
+    color: #333;
+    list-style-type: none;
+    border-radius: 10px;
+    display: flex;
+    padding: 10px 10px;
+    position: relative;
+    z-index: 10;
+}
+.step-wizard-item{
+    flex-basis: 0;
+    -webkit-box-flex: 1;
+    -ms-flex-positive:1;
+    flex-grow: 1;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    min-width: 35%;
+    position: relative;
+}
+.step-wizard-item + .step-wizard-item:after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 19px;
+    background: #00446B;
+    width: 100%;
+    height: 2px;
+    transform: translateX(-50%);
+    z-index: -10;
+}
+
+.progress-count{
+    height: 30px;
+    width:30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: 600;
+    margin: 0 auto;
+    position: relative;
+    z-index:10;
+    color: transparent;
+}
+.progress-count:after{
+    content: "";
+    height: 30px;
+    width: 30px;
+    background: #00446B;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: -10;
+}
+.progress-count:before{
+    content: "";
+    height: 10px;
+    width: 20px;
+    border-left: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -60%) rotate(-45deg);
+    transform-origin: center center;
+}
+.progress-label{
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+.current-item .progress-count:before,
+.current-item ~ .step-wizard-item .progress-count:before{
+    display: none;
+}
+.current-item ~ .step-wizard-item .progress-count:after{
+    height:10px;
+    width:10px;
+}
+.current-item ~ .step-wizard-item .progress-label{
+    opacity: 0.5;
+}
+.current-item .progress-count:after{
+    background: #fff;
+    border: 2px solid #00446B;
+}
+.current-item .progress-count{
+    color: #00446B;
+}
+/*Configuração parte de tratamento*/
+.anamnese{
+    width: 90%;
+    height: auto;
+    margin: auto;
+}
+.anamnese h1{
+    width: 90%;
+    height: auto;
+    margin: 0;
+    color:#00446B;
+    font-weight: 700;
+    font-size: 24px;
+}
+.text-tratamento{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0px;
+}
+.text-tratamento input[type="submit"]{
+    width: 40%;
+    margin: 0px auto;
+}
+textarea{
+    resize: none;
+}
+textarea:invalid{
+    border: 2px solid red;
+}
+
+/*Configuração area de exames e laudo*/
+.exame-box{
+    width: 90%;
+    height: auto;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+.exame-box h1{
+    width: 90%;
+    height: auto;
+    margin: 0;
+    color:#00446B;
+    font-weight: 700;
+    font-size: 24px;
+}
+.right-left-exame{
+    display: flex;
+    flex-direction: row;
+}
+.img-exame{
+    width: 50%;
+    margin: auto ;
+}
+
+.picture_input{
+    display: none;
+}
+.picture{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    aspect-ratio: 5/3;
+    background-color: #d6d3d3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed;
+    color: rgb(108, 108, 108);
+    transition: color 3s ease-in-out, backgroud 3s ease-in-out;
+}
+.picture:hover{
+    color: #777;
+    background: #ccc;
+}
+.laudo-exame{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.text-laudo{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0px;
+}
+.text-laudo input[type="submit"]{
+    width: 40%;
+    margin: 0px auto;
+}
+textarea{
+    resize: none;
+}
+textarea:invalid{
+    border: 2px solid red;
+}
+/*Configuração do botão enviar*/
