@@ -22,7 +22,7 @@
    
         
     <div class="logo">
-        <a href="https://sprinttech.com.br/"><img src="/img/sprinttech.svg" alt="sprinttech">
+        <img src="/img/sprinttech.svg" alt="sprinttech">
     </div>
 
     <div class="dropdown">

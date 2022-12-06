@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PatientController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,13 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [PatientController::class, 'index']);
 
-Route::get('/patients/create', function () {
-    return view('create');
-});
+Route::get('/patient/create', [PatientController::class, 'create']);
+
+Route::get('/patient/{id}', [PatientController::class, 'show']);
+
+Route::post('/patient/store', [PatientController::class, 'show']);
 
 Route::get('/test', function () {
     return view('test');
