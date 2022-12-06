@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('patients', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
+            $table->string('imagePatient');
             $table->string('genero');
             $table->integer('idade');
             $table->string('email');
@@ -24,7 +25,7 @@ return new class extends Migration
             $table->string('inicioTratamento');
             $table->string('previsãoTratamento');
             $table->integer('anamnese');
-            $table->string('laudo');
+            $table->string('imageLaudo');
             $table->string('senha');
             $table->timestamps();
         });
