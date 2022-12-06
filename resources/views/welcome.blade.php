@@ -4,6 +4,6 @@
 
 @section('conteudo')
 
-<p> AAAAAAAAAA </p>
+
 
 @endsection
