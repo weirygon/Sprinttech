@@ -22,7 +22,7 @@
    
         
     <div class="logo">
-        <img src="/img/sprinttech.svg" alt="sprinttech">
+        <a href="https://sprinttech.com.br/"><img src="/img/sprinttech.svg" alt="sprinttech">
     </div>
 
     <div class="dropdown">
@@ -31,7 +31,9 @@
             <i class="fas fa-user-circle fa-xl"></i>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            @if(request()->path() != 'patients/create')
             <li><a class="dropdown-item" href="#">CADASTRAR CLIENTE</a></li>
+            @endif
             <li><a class="dropdown-item" href="#">MEUS DADOS</a></li>
             <li><a class="dropdown-item" href="#">SAIR</a></li>
         </ul>
