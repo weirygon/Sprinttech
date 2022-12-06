@@ -111,24 +111,8 @@ header {
     width: 100%;
 }
 /*Configuração para a imagem do paciente*/
-.picture-paciente{
-    width: 40%;
-    display: flex;
-    margin-top: 30px;
-}
-.picture_input{
-    display: none;
-}
-.picture-paciente{
-    width: 200px;
-    aspect-ratio: 5/3;
-    background-color: #d6d3d3;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px dashed;
-    color: rgb(108, 108, 108);
-    transition: color 3s ease-in-out, backgroud 3s ease-in-out;
+.form-img{
+    margin: auto;
 }
 .picture:hover{
     color: #777;

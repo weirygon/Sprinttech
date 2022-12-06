@@ -28,6 +28,7 @@ return new class extends Migration
             $table->string('cidade');
             $table->string('uf');
             $table->string('senha');
+            $table->rememberToken();
             $table->timestamps();
         });
     }

@@ -27,6 +27,9 @@ return new class extends Migration
             $table->integer('anamnese');
             $table->string('imageLaudo');
             $table->string('senha');
+            $table->rememberToken();
+            $table->unsignedBigInteger('id_doctor');
+            $table->foreign('id_doctor')->references('id');
             $table->timestamps();
         });
     }

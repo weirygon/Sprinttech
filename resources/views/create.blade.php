@@ -10,16 +10,16 @@
     <!-- Div para cadastrar informações do paciente --->
     <div class="box-paciente">
 
-        <div class="paciente" id="form" method="POST">
+        <div class="paciente" id="form" method="POST" enctype="multipart/form-data" >
             <div class="line1">
                 <div class="name">
                     <label for="nome">NOME</label>
                     <input class="paciente_name" type="text" name="nome" placeholder="Nome Completo" maxlenght="30">
                 </div>
-                <label class="picture-paciente" tabindex="0">
-                    <input type="file" accept="image/*" class="picture_input" />
-                    <span class="picture_image">Imagem</span>
-                </label>
+                <div class="form-img">
+                    <label></label>
+                    <input type="file" id="image" name="image" class="from-control-file">  
+                </div>
             </div>
             <div class="line2">
                 <div class="esq-line2">
@@ -59,7 +59,7 @@
     </div>
 
     <!-- Div para caixa de texto tratamento --->
-    <div class="anamnese">
+    <div class="anamnese" method="POST">
         <div class="head-anamnese">
             <h1>ANAMESE/TRATAMENTO</h1>
             <hr />
@@ -70,17 +70,15 @@
         </div>
     </div>
     <!-- Div para envio dos exames e o laudo do profissional --->
-    <div class="exame-box">
+    <div class="exame-box" method="POST" enctype="multipart/form-data">
         <div class="head-exame-box">
             <h1>ARQUIVO EXAME</h1>
             <hr />
         </div>
         <div class="right-left-exame">
-            <div class="img-exame">
-                <label class="picture" tabindex="0">
-                    <input type="file" accept="image/*" class="picture_input" />
-                    <span class="picture_image">Imagem</span>
-                </label>
+            <div class="form-img">
+                <label></label>
+                <input type="file" id="image" name="image" class="from-control-file">  
             </div>
             <div class="laudo-exame">
                 <div class="text-laudo">
