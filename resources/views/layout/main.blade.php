@@ -11,6 +11,8 @@
 
     <title>@yield('titulo')</title>
 
+    @yield('scripts')
+
 </head>
 <header>
 

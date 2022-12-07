@@ -4,6 +4,12 @@
 
 @section('paragrafo', 'Cadastrar paciente')
 
+@section('scripts')
+
+    <link rel="stylesheet" type="text/css" href="/css/create.css">
+
+@endsection
+
 @section('conteudo')
 
 <div class="cadastro-box">
@@ -15,6 +21,7 @@
         <div class="box-paciente">
 
             <div class="paciente" id="form" method="POST" enctype="multipart/form-data" >
+
                 <div class="line1">
                     <div class="name">
                         <label for="nome">NOME</label>
@@ -25,10 +32,19 @@
                         <input type="file" id="image" name="image" class="from-control-file">  
                     </div>
                 </div>
+
                 <div class="line2">
-                    <div class="esq-line2">
-                        <label for="genero">GENERO</label>
-                        <input class="paciente" type="text" name="genero" placeholder="FEMININO/MASCULINO">
+                    <label for="genero">GÊNERO</label>
+
+                        <div class="line2-option">
+                            <div class="form-check form-check-inline">
+                                <input type="radio" name="genero" value="0" class="form-check-input">
+                                <label for="feminino" class="form-check-label">Feminino</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" name="genero"  value="1" class="form-check-input"> 
+                                <label for="masculino" class="form-check-label">Masculino</label>
+                        </div>
                     </div>
                 </div>
                 <div class="line3">

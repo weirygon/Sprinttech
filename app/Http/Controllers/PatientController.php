@@ -20,7 +20,7 @@ class PatientController extends Controller
 
     public function show($id){
 
-        return view('show');
+        return view('show', ['patient' => Patient::find($id)]);
     }
 
     public function store(Request $request){

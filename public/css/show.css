@@ -1,0 +1,142 @@
+
+hr{
+    background-color: #00446B;
+}
+h1{
+    font-size: 26px;
+    font-weight: bold;
+}
+.container-block-patient{
+    padding: 5px;
+    color: #00446b;
+}
+.block-patient{
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 10px;
+    padding: .5%;
+}
+.head-patient{
+    display: flex;
+    flex-direction: row;
+}
+#title{
+    width: 50%;
+}
+#edit_date{
+    display: flex;
+    justify-content: end;
+    width: 50%;
+}
+#edit_date button{
+    background-color: #00446B;
+    color: white;
+    font-weight: bold;
+    border: #00446b;
+    border-radius: 5px;
+}
+.date{
+    display: flex;
+    flex-direction: row;
+}
+.patient-data{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+.patient-image{
+    width: 20%;
+}
+.line1{
+    display: flex;
+    flex-direction: row;
+}
+#name{
+    width: 50%;
+}
+#genre{
+    width: 50%;
+}
+.line2{
+    display: flex;
+    flex-direction: row;
+}
+#email{
+    width: 50%;
+}
+#age{
+    width: 50%;
+}
+.line3{
+    display: flex;
+    flex-direction: row;
+}
+#birth{
+    width: 50%;
+}
+#phone{
+    width: 50%;
+}
+.line4{
+    display: flex;
+    flex-direction: row;
+}
+#start-treatment{
+    width: 50%;
+}
+#treatment-prediction{
+    width: 50%;
+}
+.container-block-anamnesis{
+    padding: 5px;
+}
+.block-anamnesis{
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 10px;
+    padding: .5%;
+}
+.container-block-exam{
+    padding: 5px;
+}
+.block-exam{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 10px;
+    padding: .5%;
+}
+.exam-report{
+    width: 100%;
+    height: 50%;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+}
+#exam{
+    width: 50%;
+}
+#report{
+    width: 50%;
+}
+.new-exam{
+    height: 50%;
+}
+.form{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#carouselExampleControls{
+    height: 70%;
+    width: 90%;
+    margin: auto;
+    box-sizing: border-box;
+}
+.left-form{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+.right-form{
+    width: 50%;
+}
