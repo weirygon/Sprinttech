@@ -20,7 +20,7 @@ Route::get('/patient/create', [PatientController::class, 'create']);
 
 Route::get('/patient/{id}', [PatientController::class, 'show']);
 
-Route::post('/patient/store', [PatientController::class, 'show']);
+Route::post('/patient/store', [PatientController::class, 'store']);
 
 Route::get('/test', function () {
     return view('test');
