@@ -103,9 +103,10 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    margin-top: 25px;
 }
 .name{
-    width: 60%;
+    width: 50%;
 }
 .name input{
     width: 100%;

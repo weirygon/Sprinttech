@@ -16,21 +16,15 @@ return new class extends Migration
         Schema::create('patients', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
-            $table->string('imagePatient');
             $table->string('genero');
-            $table->integer('idade');
             $table->string('email');
             $table->string('dataNascimento');
             $table->string('telefone');
-            $table->string('inicioTratamento');
-            $table->string('previsãoTratamento');
-            $table->integer('anamnese');
-            $table->string('imageLaudo');
-            $table->string('senha');
-            $table->rememberToken();
-            $table->unsignedBigInteger('id_doctor');
-            $table->foreign('id_doctor')->references('id');
-            $table->timestamps();
+            $table->timestamps();   //Data de inicio do tratamento
+            $table->date('previsao');
+            $table->text('tratamento');
+            $table->text('laudo');
+
         });
     }
 
