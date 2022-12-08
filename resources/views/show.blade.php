@@ -10,8 +10,6 @@
 
 @section('conteudo')
 
-    
-
     <div class="container-block-patient">
         <div class="block-patient">
             <div class="head-patient">
@@ -59,7 +57,7 @@
                     <div class="line4">
                         <div id="start-treatment">
                             <label>INICIO DO TRATAMENTO:</label>
-                            <label> </label>
+                            <label>{{ $patient->inicioTratamento}}</label>
                         </div>
                         <div id="treatment-prediction">
                             <label>PREVISÃO DO TRATAMENTO:</label>

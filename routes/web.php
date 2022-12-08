@@ -20,12 +20,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [DoctorController::class, 'index'])->middleware(['auth']);
 
-Route::get('/patient/create', [PatientController::class, 'create']);
+Route::get('/patient/create', [PatientController::class, 'create'])->middleware(['auth']);
 Route::get('/doctor/create', [DoctorController::class, 'create'])->name('add');
 
-Route::get('/patient/{id}', [PatientController::class, 'show']);
+Route::get('/patient/{id}', [PatientController::class, 'show'])->middleware(['auth']);
+Route::get('/doctor/{id}', [DoctorController::class, 'showDoc'])->middleware(['auth']);
 
-Route::post('/patient/store', [PatientController::class, 'store']);
-Route::post('/doctor/store', [DoctorController::class, 'store']);
+Route::post('/patient/store', [PatientController::class, 'store'])->middleware(['auth']);
+Route::post('/doctor/store', [DoctorController::class, 'store'])->middleware(['auth']);
 
-Route::post('/exam/store', [ExamController::class, 'store']);
+Route::post('/exam/store', [ExamController::class, 'store'])->middleware(['auth']);

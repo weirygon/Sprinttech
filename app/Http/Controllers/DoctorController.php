@@ -19,6 +19,11 @@ class DoctorController extends Controller
         return view('create');
     }
 
+    public function showDoc($id){
+        Carbon::setLocale('pt');
+
+        return view('showDoc', ['doctor' => Doctor::find($id)]);
+    }
     public function store(Request $request)
     {
 

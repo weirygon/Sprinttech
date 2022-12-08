@@ -35,14 +35,15 @@
         <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
 
             @if(request()->path() != 'patient/create')
-            <li><a class="dropdown-item" href="/patient/create">CADASTRAR CLIENTE</a></li>
+                <li><a class="dropdown-item" href="/patient/create">CADASTRAR CLIENTE</a></li>
             @endif
-            
-            <li><a class="dropdown-item" href="#">MEUS DADOS</a></li>
+            @if(request()->path() != 'doctor/{{ $auth()->user()->doctor_id}}')
+                <li><a class="dropdown-item" href="#">MEUS DADOS</a></li>
+            @endif
             @if(auth()->check())
             <form method="POST" action="/logout">
                 @csrf
-                <button class="button_sair">Logout</button>
+                <button class="button_sair">LOGOUT</button>
             </form>
             @endif
         </ul>

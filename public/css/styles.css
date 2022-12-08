@@ -76,8 +76,17 @@ header {
     max-width: none;
     margin: 25px 10% 50px 10%;
     padding: 2px;
-
     border-radius: 20px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
     background-color: rgba(0, 0, 0, 0.1);
+}
+.button_sair{
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    text-align: start;
+    padding: 0.25rem 1rem;
+}
+.button_sair:hover{
+    background-color:rgba(197, 197, 197, 0.1);;
 }
