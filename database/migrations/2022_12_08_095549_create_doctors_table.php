@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('doctors', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
+            $table->boolean('genero');
             $table->date('dataNascimento');
-            $table->string('img');
             $table->string('email');
             $table->timestamps();
         });

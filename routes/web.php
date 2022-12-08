@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\ExamController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PatientController;
+use App\Http\Controllers\DoctorController;
+use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +20,12 @@ use App\Http\Controllers\PatientController;
 Route::get('/', [PatientController::class, 'index']);
 
 Route::get('/patient/create', [PatientController::class, 'create']);
+Route::get('/doctor/create', [DoctorController::class, 'create']);
+
 
 Route::get('/patient/{id}', [PatientController::class, 'show']);
 
 Route::post('/patient/store', [PatientController::class, 'store']);
+Route::post('/doctor/store', [DoctorController::class, 'store']);
 
 Route::post('/exam/store', [ExamController::class, 'store']);

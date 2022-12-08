@@ -2,8 +2,11 @@
 
 @section('titulo', 'Cadastro')
 
-@section('paragrafo', 'Cadastrar paciente')
-
+@if (request()->path() == 'doctor/create')
+    @section('paragrafo', 'Cadastrar Doutor')
+@else
+    @section('paragrafo', 'Cadastrar Paciente')
+@endif
 @section('scripts')
 
     <link rel="stylesheet" type="text/css" href="/css/create.css">
@@ -28,8 +31,12 @@
 
     @endif
     
-
+    @if (request()->path() == 'doctor/create')
+    <form action="/doctor/store" method="POST" enctype="multipart/form-data" >
+    @endif
+    
     <form action="/patient/store" method="POST" enctype="multipart/form-data" >
+
         @csrf
 
         <div class="box-paciente">
@@ -68,8 +75,14 @@
                     </div>
 
                     <div class="dir-line3">
-                        <label for="email">CPF</label>
-                        <input class="paciente" type="text" name="cpf" placeholder="Sem pontuação" maxlenght="11">
+                        @if (request()->path() == 'doctor/create')
+                            <label for="email">CRO</label>
+                            <input class="paciente" type="text" name="cro" placeholder="Sem pontuação" maxlenght="5">
+                        @else
+                            <label for="email">CPF</label>
+                            <input class="paciente" type="text" name="cpf" placeholder="Sem pontuação" maxlenght="11">
+                        @endif
+                        
                     </div>
                 </div>
                 <div class="line4">
@@ -77,11 +90,16 @@
                         <label for="dataNascimento">DATA DE NASCIMENTO</label>
                         <input class="paciente" type="date" name="dataNascimento">
                     </div>
+                    @if (request()->path() != 'doctor/create')
                     <div class="dir-line4">
                         <label for="telefone">TELEFONE</label>
                         <input class="paciente" type="text" name="telefone" placeholder="Telefone (xx xxxx-xxxx)" maxlenght="30">
                     </div>
+                    @endif
                 </div>
+
+                @if (request()->path() != 'doctor/create')
+
                 <div class="line5">
                     <div class="esq-line5">
                         <label for="inicioTratamento">INICIO DO TRATAMENTO</label>
@@ -92,9 +110,10 @@
                         <input class="paciente" type="date" name="previsao">
                     </div>
                 </div>
+                @endif
             </div>
         </div>
-
+        @if (request()->path() != 'doctor/create')
         <!-- Div para caixa de texto tratamento --->
         <div class="anamnese" method="POST">
             <div class="head-anamnese">
@@ -127,6 +146,7 @@
             </div>
 
         </div>
+        @endif
         <div class="paciente">
             <input class="paciente" type="submit" value="CADASTRAR">
         </div>
