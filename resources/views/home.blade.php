@@ -18,7 +18,7 @@
     <div class="patient">
 
         <div class="pic-profile">
-            <img src="/" alt="pic-profile">
+            <img src="/storage/patient/img/{{ $patient->id }}/profile.jpg" alt="pic-profile">
         </div>
 
         <div class="description-profile">

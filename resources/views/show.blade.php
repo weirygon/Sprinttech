@@ -31,8 +31,12 @@
                             <label>{{ $patient->nome }}</label>
                         </div>
                         <div id="genre">
-                            <label>GENERO:</label>
-                            <label>{{ $patient->genero }}</label>
+                            <label>GENÊRO:</label>
+                            @if( $patient->genero )
+                                <label>Masculino</label>
+                            @else
+                                <label>Feminino</label>
+                            @endif
                         </div>
                     </div>
                     <div class="line2">
@@ -109,7 +113,7 @@
                 </div>
                 <div id="report">
                     <label>LAUDO:</label>
-                    {{ $patient->laudo }}
+                    <p>{{ $patient->laudo }}</p>
                 </div>
             </div>
             <!-- Div para envio dos exames e o laudo do profissional --->

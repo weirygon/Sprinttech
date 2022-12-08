@@ -20,10 +20,11 @@ return new class extends Migration
             $table->string('email');
             $table->string('dataNascimento');
             $table->string('telefone');
-            $table->timestamps();   //Data de inicio do tratamento
+            $table->date('inicioTratamento');
             $table->date('previsao');
             $table->text('tratamento');
             $table->text('laudo');
+            $table->timestamps();
 
         });
     }

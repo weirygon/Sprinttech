@@ -15,12 +15,12 @@
 <div class="cadastro-box">
     <!-- Div para cadastrar informações do paciente --->
 
-    <form action="/patient/store" method="POST">
+    <form action="/patient/store" method="POST" enctype="multipart/form-data" >
         @csrf
 
         <div class="box-paciente">
 
-            <div class="paciente" id="form" method="POST" enctype="multipart/form-data" >
+            <div class="paciente" id="form" >
 
                 <div class="line1">
                     <div class="name">
@@ -48,8 +48,15 @@
                     </div>
                 </div>
                 <div class="line3">
-                    <label for="email">EMAIL</label>
-                    <input class="paciente" type="email" name="email" placeholder="E-mail (ex: abc@email.com)" maxlenght="40">
+                    <div class="esq-line3">
+                        <label for="email">EMAIL</label>
+                        <input class="paciente" type="email" name="email" placeholder="E-mail (ex: abc@email.com)" maxlenght="40">
+                    </div>
+
+                    <div class="dir-line3">
+                        <label for="email">CPF</label>
+                        <input class="paciente" type="text" name="cpf" placeholder="Sem pontuação" maxlenght="11">
+                    </div>
                 </div>
                 <div class="line4">
                     <div class="esq-line4">
@@ -94,7 +101,7 @@
             <div class="right-left-exame">
                 <div class="form-img">
                     <label></label>
-                    <input type="file" id="image" name="image" class="from-control-file">  
+                    <input type="file" id="imageExam" name="imageExam" class="from-control-file">  
                 </div>
                 <div class="laudo-exame">
                     <div class="text-laudo">

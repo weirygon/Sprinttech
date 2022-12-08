@@ -6,7 +6,7 @@
     border-radius: 20px;
     margin-bottom: 2px;
     padding: 10px;
-    align-items: baseline;
+    align-items: normal;
     border: solid #00446B;
     background-color: white;
     
@@ -19,8 +19,18 @@
 
 }
 
+.pic-profile img{
+
+    width: auto;
+    height: 100%;
+    border-radius: 100%;
+    border: solid #00446B;
+    margin-left: 30%;
+}
+
 .descreption-profile{
 
+    display: flex;
     width: 80%;
     height: 100%;
     margin-left: 50px;

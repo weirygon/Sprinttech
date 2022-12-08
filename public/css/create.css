@@ -26,7 +26,7 @@
     width: 50%;
 }
 .name input{
-    width: 100%;
+    width: 95%;
 }
 /*Configuração para a imagem do paciente*/
 .form-img{
@@ -51,11 +51,23 @@
 
 /*Configuração espaçamento email*/
 .line3{
+    display: flex;
+    flex-direction: row;
     margin:10px 0px;
 }
-.line3 input{
+.esq-line3{
+    width: 50%;
+}
+.esq-line3 input{
+    width: 95%;
+}
+.dir-line3{
+    width: 50%;
+}
+.dir-line3 input{
     width: 100%;
 }
+
 /*Configuração nascimento e telefone*/
 .line4{
     display: flex;
