@@ -15,6 +15,9 @@
 * <img align="center" height="30" width="40" src="https://getbootstrap.com/docs/5.2/assets/brand/bootstrap-logo-shadow.png"> Bootstrap5
 * <img align="center" height="40" width="40" src="https://static-00.iconduck.com/assets.00/laravel-icon-497x512-uwybstke.png"> Laravel
 
+## O projeto
+O projeto desenvolvido para a disciplina de Desenvolvimento Web Servidor consiste em um sistema de cadastro de paciente, na qual existe niveis de acesso. Caso o user for um paciente, ele será direcionado para uma pagina onde tem todos os seus dados e a previsão de tratamento. Caso o user seja o dentista, ele será direcionado pra uma pagina onde conseguira ver todos os seus pacientes e ao clicar em um dos pacientes cadastrados, conseguirá ver todos os dados e caso necessite editar os dados e exames do paciente.
+
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
