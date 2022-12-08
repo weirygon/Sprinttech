@@ -15,4 +15,9 @@ class Patient extends Model
 
         return $this->hasMany(Exam::class);
     }
+
+    public function doctor(){
+        
+        return $this->belongsTo(Patient::class);
+    }
 }
