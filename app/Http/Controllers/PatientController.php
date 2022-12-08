@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Exam;
-use Illuminate\Http\File;
 use Carbon\Carbon;
 use App\Models\Patient;
 use Illuminate\Http\Request;
@@ -29,6 +28,23 @@ class PatientController extends Controller
 
     public function store(Request $request){
 
+        $request->validate([
+            'cpf' => 'required|max:11|min:11',
+            'imageProfile' => 'required',
+            'nome' => 'required',
+            'genero' => 'required',
+            'email' => 'required',
+            'dataNascimento' => 'required',
+            'telefone' => 'required',
+            'inicioTratamento' => 'required',
+            'previsao' => 'required',
+            'tratamento' => 'required',
+            'imageExam' => 'required',
+            'laudo' => 'required'
+
+        ]);
+
+
         $patient = new Patient();
         $patient->id = $request->input('cpf');
         $patient->nome = $request->input('nome');
@@ -50,7 +66,7 @@ class PatientController extends Controller
         $imageName = md5($request->file('imageExam')->getFilename().strtotime("now")).".jpg";
         Storage::putFileAs($dir, $request->file('imageExam'), $imageName);
 
-        Exam::firstOrCreate([
+        Exam::create([
             'patient_id' => $patient->id,
             'laudo' => $request->input('laudo'),
             'img' => $imageName

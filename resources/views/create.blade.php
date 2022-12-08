@@ -15,6 +15,20 @@
 <div class="cadastro-box">
     <!-- Div para cadastrar informações do paciente --->
 
+    @if ($errors->any())
+        
+        <br>
+        <div class="alert alert-danger">
+        
+            @foreach ($errors->all() as $erro)
+                <p>{{ $erro }}</p>
+            @endforeach
+
+        </div>
+
+    @endif
+    
+
     <form action="/patient/store" method="POST" enctype="multipart/form-data" >
         @csrf
 
@@ -120,5 +134,6 @@
     </form>
     
 </div>
+
 
 @endsection

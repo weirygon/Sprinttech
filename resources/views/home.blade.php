@@ -30,7 +30,6 @@
 
     </div>
 
-
     @empty
             <h2 style="text-align: center">Não ha nenhum paciente!</h2>
 
