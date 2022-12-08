@@ -24,7 +24,7 @@
         <div class="description-profile">
 
             <a href="/patient/{{ $patient->id }}" class="name-profile">{{ $patient->nome }}</a>
-            <p>{{ $patient->dataNascimento }}</p>
+            <p> Nascimento: {{ $patient->dataNascimento }}</p>
 
         </div>
 

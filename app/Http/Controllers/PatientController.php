@@ -3,14 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\File;
+use Carbon\Carbon;
 use App\Models\Patient;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class PatientController extends Controller
 {
-    public function index(){
 
+    public function index(){
+        Carbon::setLocale('pt');
         return view('home', ['patients' => Patient::all()]);
     }
 
@@ -20,7 +22,7 @@ class PatientController extends Controller
     }
 
     public function show($id){
-
+        Carbon::setLocale('pt');
         return view('show', ['patient' => Patient::find($id)]);
     }
 
@@ -36,7 +38,6 @@ class PatientController extends Controller
         $patient->inicioTratamento = $request->input('inicioTratamento');
         $patient->previsao = $request->input('previsao');
         $patient->tratamento = $request->input('tratamento');
-        $patient->laudo = $request->input('laudo');
 
         $dir = '/public/patient/img/' . $patient->id;
         
