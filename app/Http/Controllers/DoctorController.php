@@ -3,15 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\Doctor;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Carbon\Carbon;
 
 class DoctorController extends Controller
 {
-    public function index($id){
+    public function index(){
         Carbon::setLocale('pt');
-        return view('home', ['doctor' => Doctor::find($id)]);
+        return view('home', ['doctor' => Doctor::find(auth()->user()->doctor_id)]);
     }
 
     public function create(){
@@ -47,6 +48,10 @@ class DoctorController extends Controller
 
         $doctor->save();
 
+        $user = User::find(auth()->user()->id);
+        $user->doctor_id = $doctor->id;
+
+        $user->save();
         return view('home', ['doctor' => $doctor]);
         
     }

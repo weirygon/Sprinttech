@@ -15,7 +15,7 @@ class PatientController extends Controller
 
     public function create(){
 
-        return view('create', ['doctor' => Doctor::find(12345)]);
+        return view('create', ['doctor' => Doctor::find(auth()->user()->doctor_id)]);
     }
 
     public function show($id){

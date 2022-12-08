@@ -22,6 +22,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'doctor_id'
     ];
 
     /**
@@ -42,4 +43,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function doctor(){
+        
+        return $this->belongsTo(Doctor::class);
+    }
+
 }
