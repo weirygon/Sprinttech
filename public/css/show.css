@@ -5,6 +5,7 @@ hr{
 h1{
     font-size: 26px;
     font-weight: bold;
+    color: #00446b;
 }
 .container-block-patient{
     padding: 5px;
@@ -114,6 +115,7 @@ h1{
     border: solid black;
     border-width: 2px;
     border-radius: 20px;
+    margin-bottom: 10px;
 
 }
 
@@ -145,5 +147,43 @@ h1{
 
     width: 50%;
     height: 200px;
+
+}
+.add-Exam{
+
+    display: flex;
+    flex-direction: row;
+    height: 230px;
+
+}
+
+.form-img{
+
+    width: 50%;
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.laudo-exame{
+
+    width: 50%;
+    height: auto;
+
+}
+
+.laudo-exame textarea{
+
+    width: 100%;
+
+}
+
+.btn-cadastrar{
+
+    display: flex;
+    margin-bottom: 10px;
+    justify-content: flex-end;
 
 }
