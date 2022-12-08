@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('exams', function (Blueprint $table) {
             $table->id();
-            $table->string('nome');
+            $table->string('img');
             $table->text('laudo');
             $table->timestamps();
 

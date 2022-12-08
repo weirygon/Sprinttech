@@ -9,6 +9,8 @@ class Patient extends Model
 {
     use HasFactory;
 
+    protected $grarded = [];
+
     public function exams(){
 
         return $this->hasMany(Exam::class);

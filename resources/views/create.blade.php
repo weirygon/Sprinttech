@@ -29,7 +29,7 @@
                     </div>
                     <div class="form-img" style="margin-top: 30px">
                         <label></label>
-                        <input type="file" id="image" name="image" class="from-control-file">  
+                        <input type="file" id="image" name="imageProfile" class="from-control-file">  
                     </div>
                 </div>
 

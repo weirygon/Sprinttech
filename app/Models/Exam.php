@@ -9,6 +9,7 @@ class Exam extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];  
     public function patient(){
 
         return $this->belongsTo(Patient::class);

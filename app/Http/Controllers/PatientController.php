@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Exam;
 use Illuminate\Http\File;
 use Carbon\Carbon;
 use App\Models\Patient;
@@ -39,10 +40,22 @@ class PatientController extends Controller
         $patient->previsao = $request->input('previsao');
         $patient->tratamento = $request->input('tratamento');
 
+       
+
+        // UPLOAD IMG
         $dir = '/public/patient/img/' . $patient->id;
         
-        Storage::putFileAs($dir, $request->file('image'), 'profile.jpg');
+        Storage::putFileAs($dir, $request->file('imageProfile'), 'profile.jpg');
 
+        $imageName = md5($request->file('imageExam')->getFilename().strtotime("now")).".jpg";
+        Storage::putFileAs($dir, $request->file('imageExam'), $imageName);
+
+        $exam = Exam::firstOrCreate([
+            'laudo' => $request->input('laudo'),
+            'img' => $imageName
+        ]);
+
+        $patient->exam_id = $exam->id;
 
         $patient->save();
 
