@@ -107,25 +107,30 @@
         <h1>Adicionar</h1>
         <hr />
 
-        <div class="add-Exam">
+        <form action="/exam/store" method="POST" enctype="multipart/form-data" >
+            @csrf
 
-            
-            <div class="form-img">
-                <input type="file" id="image" name="image" class="from-control-file">  
-            </div>
+            <div class="add-Exam">
 
-            <div class="laudo-exame">
                 
-                <h1>Laudo</h1>
-                <textarea rows="6" cols="35" name="laudo" id="comment" maxlength="2000" minlength="20"></textarea>
-                <label for="laudo">(máx. 1000 caracteres)</label>
-                
-            </div>
+                <div class="form-img">
+                    <input type="file" id="image" name="image" class="from-control-file">  
+                </div>
 
-        </div>
-        <div class="btn-cadastrar">
-            <input class="paciente" type="submit"  value="CADASTRAR">
-        </div>
+                <div class="laudo-exame">
+                    
+                    <h1>Laudo</h1>
+                    <textarea rows="6" cols="35" name="laudo" id="comment" maxlength="2000" minlength="20"></textarea>
+                    <label for="laudo">(máx. 1000 caracteres)</label>
+                    
+                </div>
+
+            </div>
+            <div class="btn-cadastrar">
+                <input name="foreignId" type="hidden" value="{{ $patient->id }}">
+                <input class="paciente" type="submit" value="CADASTRAR">
+            </div>
+        </form>
     </div>
 
 @endsection

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ExamController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PatientController;
 
@@ -21,3 +22,5 @@ Route::get('/patient/create', [PatientController::class, 'create']);
 Route::get('/patient/{id}', [PatientController::class, 'show']);
 
 Route::post('/patient/store', [PatientController::class, 'store']);
+
+Route::post('/exam/store', [ExamController::class, 'store']);
