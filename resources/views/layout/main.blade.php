@@ -35,7 +35,7 @@
         <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
 
             @if(request()->path() != 'patient/create')
-            <li><a class="dropdown-item" href="patient/create">CADASTRAR CLIENTE</a></li>
+            <li><a class="dropdown-item" href="/patient/create">CADASTRAR CLIENTE</a></li>
             @endif
             
             <li><a class="dropdown-item" href="#">MEUS DADOS</a></li>

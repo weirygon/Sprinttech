@@ -12,6 +12,9 @@
 
 @section('conteudo')
 
+    {{ auth()->user()}}
+
+
     @if(isset($doctor))
 
         @forelse($doctor->patients as $patient)
@@ -38,7 +41,7 @@
     @else
 
         <script>
-            window.location.href = "/doctor/create";
+            //window.location.href = "/doctor/create";
         </script>
 
     @endif

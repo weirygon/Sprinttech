@@ -9,9 +9,9 @@ use Carbon\Carbon;
 
 class DoctorController extends Controller
 {
-    public function index(){
+    public function index($id){
         Carbon::setLocale('pt');
-        return view('home', ['doctor' => Doctor::find(54321)]);
+        return view('home', ['doctor' => Doctor::find($id)]);
     }
 
     public function create(){
@@ -38,7 +38,7 @@ class DoctorController extends Controller
         $doctor->genero = $request->input('genero');
         $doctor->email = $request->input('email');
         $doctor->dataNascimento = $request->input('dataNascimento');
-        $doctor->foreignId = auth()->id();
+        $doctor->user_id = auth()->user()->id;
 
         // UPLOAD IMG
         $dir = '/public/doctor/img/' . $doctor->id;
