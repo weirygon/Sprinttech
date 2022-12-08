@@ -32,11 +32,16 @@
     @endif
     
     @if (request()->path() == 'doctor/create')
-    <form action="/doctor/store" method="POST" enctype="multipart/form-data" >
-    @endif
-    
-    <form action="/patient/store" method="POST" enctype="multipart/form-data" >
+        <form action="/doctor/store" method="POST" enctype="multipart/form-data" >
+    @else
+        <form action="/patient/store" method="POST" enctype="multipart/form-data" >
 
+    @endif
+
+    @if(isset($doctor))
+        <input name="foreignId" type="hidden" value="{{ $doctor->id }}">
+    @endif
+        
         @csrf
 
         <div class="box-paciente">
@@ -146,6 +151,7 @@
             </div>
 
         </div>
+        
         @endif
         <div class="paciente">
             <input class="paciente" type="submit" value="CADASTRAR">

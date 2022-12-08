@@ -17,11 +17,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [PatientController::class, 'index']);
+Route::get('/', [DoctorController::class, 'index']);
 
 Route::get('/patient/create', [PatientController::class, 'create']);
 Route::get('/doctor/create', [DoctorController::class, 'create']);
-
 
 Route::get('/patient/{id}', [PatientController::class, 'show']);
 

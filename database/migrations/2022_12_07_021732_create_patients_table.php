@@ -23,7 +23,7 @@ return new class extends Migration
             $table->date('inicioTratamento');
             $table->date('previsao');
             $table->text('tratamento');
-           //$table->foreignId('doctor_id');
+            $table->foreignId('doctor_id');
             $table->timestamps();
 
         });

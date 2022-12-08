@@ -8,11 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Doctor extends Model
 {
 
+    use HasFactory;
+
     protected $grarded = [];
 
     public function patients(){
-        $this->hasMany(Patient::class);
+
+        return $this->hasMany(Patient::class);
     }
 
-    use HasFactory;
 }

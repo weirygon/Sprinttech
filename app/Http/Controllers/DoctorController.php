@@ -5,9 +5,15 @@ namespace App\Http\Controllers;
 use App\Models\Doctor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Carbon\Carbon;
 
 class DoctorController extends Controller
 {
+    public function index(){
+        Carbon::setLocale('pt');
+        return view('home', ['doctor' => Doctor::find(54321)]);
+    }
+
     public function create(){
         return view('create');
     }
@@ -40,7 +46,7 @@ class DoctorController extends Controller
 
         $doctor->save();
 
-        return view('create');
+        return view('home', ['doctor' => $doctor]);
         
     }
 }

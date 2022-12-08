@@ -5,20 +5,17 @@ namespace App\Http\Controllers;
 use App\Models\Exam;
 use Carbon\Carbon;
 use App\Models\Patient;
+use App\Models\Doctor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class PatientController extends Controller
 {
 
-    public function index(){
-        Carbon::setLocale('pt');
-        return view('home', ['patients' => Patient::all()]);
-    }
 
     public function create(){
 
-        return view('create');
+        return view('create', ['doctor' => Doctor::find(12345)]);
     }
 
     public function show($id){
@@ -55,6 +52,7 @@ class PatientController extends Controller
         $patient->inicioTratamento = $request->input('inicioTratamento');
         $patient->previsao = $request->input('previsao');
         $patient->tratamento = $request->input('tratamento');
+        $patient->doctor_id = $request->input('foreignId');
 
        
 
