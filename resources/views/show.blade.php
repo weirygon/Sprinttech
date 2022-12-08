@@ -71,7 +71,7 @@
                     </div>
                 </div>
                 <div class="patient-image">
-
+                    <img src="/storage/patient/img/{{ $patient->id }}/profile.jpg" alt="pic-profile">
                 </div>
             </div>
         </div>
@@ -83,54 +83,27 @@
             <p>{{ $patient->tratamento }}</p>
         </div>
     </div>
-    <div class="container-block-exam">
+    <div class="container-exam">
         <h1>EXAMES</h1>
         <hr />
-        <div class="block-exam">
-            <div class="exam-report">
-                <div id="exam">
-                    <label>EXAMES:</label>
-                        
-                        <p>
 
-                        @foreach ($patient->exams as $item)
-                            @php
-                            echo ($item->img);
-                                                            
-                            @endphp
+        @foreach ($patient->exams as $exam)
 
-                        @endforeach
-                    
-                        </p>
+        <div class="exam">
+            <p>Publicado: {{ $exam->created_at->diffForHumans() }}</p>
+            <div class=content-Exam>
+                <div class="img-Exam">
+                    <img src="/storage/patient/img/{{ $patient->id }}/{{ $exam->img }}" alt="imageExam">
                 </div>
-                <div id="report">
-                    <label>LAUDO:</label>
-                    <p>{{ $patient->laudo }}</p>
+                <div class="laudo-exam">
+                    <p>Laudo: </p>
+                    <p>{{ $exam->laudo }}</p>
                 </div>
-            </div>
-            <!-- Div para envio dos exames e o laudo do profissional --->
-            <div class="new-exam" method="POST" enctype="multipart/form-data">
-                <div class="form">
-                    <div class="left-form">
-                        <div class="form-img">
-                            <input type="file" id="image" name="image" class="from-control-file">
-                        </div>
-                    </div>
-                    <div class="right-form">
-                        <div class="text-report">
-                            <textarea rows="6" cols="35" name="report" id="comment" maxlength="2000"
-                                minlength="20"></textarea>
-                            <label for="report">(máx. 1000 caracteres)</label>
-                        </div>
-                    </div>
-                </div>
-                <p>
-                    <div id="edit_date">
-                        <button>EDITAR LAUDO</button>
-                    </div>
-                </p>
             </div>
         </div>
+
+        @endforeach
+
     </div>
     </div>
 
