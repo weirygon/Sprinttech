@@ -37,9 +37,14 @@
             @if(request()->path() != 'patient/create')
             <li><a class="dropdown-item" href="patient/create">CADASTRAR CLIENTE</a></li>
             @endif
-            <li><a class="dropdown-item" href="#">MEUS DADOS</a></li>
-            <li><a class="dropdown-item" href="#">SAIR</a></li>
             
+            <li><a class="dropdown-item" href="#">MEUS DADOS</a></li>
+            @if(auth()->check())
+            <form method="POST" action="/logout">
+                @csrf
+                <button class="button_sair">Logout</button>
+            </form>
+            @endif
         </ul>
     </div>
 

@@ -34,10 +34,11 @@ class DoctorController extends Controller
 
         $doctor = new Doctor();
         $doctor->id = $request->input('cro');
-        $doctor->nome = $request->input('nome');
+        $doctor->nome = auth()->user()->name;
         $doctor->genero = $request->input('genero');
         $doctor->email = $request->input('email');
         $doctor->dataNascimento = $request->input('dataNascimento');
+        $doctor->foreignId = auth()->id();
 
         // UPLOAD IMG
         $dir = '/public/doctor/img/' . $doctor->id;

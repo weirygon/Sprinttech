@@ -3,6 +3,7 @@
 use App\Http\Controllers\ExamController;
 use App\Http\Controllers\PatientController;
 use App\Http\Controllers\DoctorController;
+use Illuminate\Routing\Controllers\Middleware;
 use Illuminate\Support\Facades\Route;
 
 
@@ -17,10 +18,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [DoctorController::class, 'index']);
+Route::get('/', [DoctorController::class, 'index'])->middleware(['auth']);
 
 Route::get('/patient/create', [PatientController::class, 'create']);
-Route::get('/doctor/create', [DoctorController::class, 'create']);
+Route::get('/doctor/create', [DoctorController::class, 'create'])->name('add');
 
 Route::get('/patient/{id}', [PatientController::class, 'show']);
 

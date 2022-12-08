@@ -19,6 +19,7 @@ return new class extends Migration
             $table->boolean('genero');
             $table->date('dataNascimento');
             $table->string('email');
+            $table->foreignId('user_id');
             $table->timestamps();
         });
     }

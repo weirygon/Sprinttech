@@ -35,6 +35,12 @@
         <h2 style="text-align: center">Nenhuma paciente Cadastrado!</h2> 
         @endforelse
 
+    @else
+
+        <script>
+            window.location.href = "/doctor/create";
+        </script>
+
     @endif
 
 @endsection
