@@ -24,7 +24,7 @@ class PatientController extends Controller
 
     public function show($id){
         Carbon::setLocale('pt');
-        return view('show', ['patient' => Patient::find($id)]);
+        return view('show', ['patient' => Patient::with('exams')->find($id)]);
     }
 
     public function store(Request $request){
@@ -51,11 +51,10 @@ class PatientController extends Controller
         Storage::putFileAs($dir, $request->file('imageExam'), $imageName);
 
         $exam = Exam::firstOrCreate([
+            'patient_id' => $patient->id,
             'laudo' => $request->input('laudo'),
             'img' => $imageName
         ]);
-
-        $patient->exam_id = $exam->id;
 
         $patient->save();
 

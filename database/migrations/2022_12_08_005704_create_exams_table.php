@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('img');
             $table->text('laudo');
+            $table->foreignId('patient_id');
             $table->timestamps();
 
         });

@@ -23,7 +23,6 @@ return new class extends Migration
             $table->date('inicioTratamento');
             $table->date('previsao');
             $table->text('tratamento');
-            $table->foreignId('exam_id');
             $table->timestamps();
 
         });
