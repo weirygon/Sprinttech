@@ -8,6 +8,8 @@ use Carbon\Carbon;
 use App\Models\Patient;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 
 class PatientController extends Controller
 {
@@ -19,7 +21,7 @@ class PatientController extends Controller
 
     public function create(){
 
-        return view('create');
+        return view('create')->givePermissionTo('patient');
     }
 
     public function show($id){
@@ -40,7 +42,6 @@ class PatientController extends Controller
         $patient->previsao = $request->input('previsao');
         $patient->tratamento = $request->input('tratamento');
 
-       
 
         // UPLOAD IMG
         $dir = '/public/patient/img/' . $patient->id;
@@ -60,5 +61,4 @@ class PatientController extends Controller
 
         return redirect('/');
     }
-
 }
