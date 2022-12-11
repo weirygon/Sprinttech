@@ -27,39 +27,12 @@
         <img src="/img/sprinttech.svg" alt="sprinttech">
     </div>
 
-    <div class="dropdown">
-        <button class="user" type="button" id="dropdownMenu2" data-bs-toggle="dropdown"
-            aria-expanded="false">
-            <i class="fas fa-user-circle fa-xl"></i>
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-
-            @if(request()->path() != 'patient/create')
-                <li><a class="dropdown-item" href="/patient/create">CADASTRAR CLIENTE</a></li>
-            @endif
-            @if(request()->path() != 'doctor/{{ $auth()->user()->doctor_id}}')
-                <li><a class="dropdown-item" href="#">MEUS DADOS</a></li>
-            @endif
-            @if(auth()->check())
-            <form method="POST" action="/logout">
-                @csrf
-                <button class="button_sair">LOGOUT</button>
-            </form>
-            @endif
-        </ul>
-    </div>
-
+    
 </header>
 
 <body>
-
-    <div class="description">
-        <h1>@yield('paragrafo')</h1>
-    </div>
-
-    <div class="container">
-        @yield('conteudo')
-    </div>
+    
+    @yield('conteudo')
 
 </body>
 

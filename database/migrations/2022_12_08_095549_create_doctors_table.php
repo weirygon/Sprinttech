@@ -16,19 +16,10 @@ return new class extends Migration
         Schema::create('doctors', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
-            $table->string('imageDoctor');
-            $table->string('genero');
-            $table->integer('cro');
+            $table->boolean('genero');
+            $table->date('dataNascimento');
             $table->string('email');
-            $table->string('dataNascimento');
-            $table->string('telefone');
-            $table->string('enderecoConsultorio');
-            $table->string('bairro');
-            $table->integer('cep');
-            $table->string('cidade');
-            $table->string('uf');
-            $table->string('senha');
-            $table->rememberToken();
+            $table->foreignId('user_id');
             $table->timestamps();
         });
     }
